@@ -3,16 +3,19 @@
   font-family: "handwritten";
 }
 
-
 #app{
   font-size: 1rem;
   font-weight: 400;
 }
 
-
-
 #herosection{
   font-weight: 500;
+  position: relative;
+}
+
+#herosection .hero-text h1{
+  user-select: none;
+  font-size: 4.0rem;
 }
 
 #herosection .hero-text h1 span{
@@ -21,4 +24,18 @@
   font-family: "handwritten";
 }
 
+#hero-para{
+  width: 30%;
+  /* background-color: crimson; */
+  position: absolute;
+  bottom: 20%;
+  left: 55%;
+}
+
+#hero-para p{
+  font-size: 12px;
+  color: white;
+  padding: 0.5rem;
+  line-height: 1.2;
+}
 

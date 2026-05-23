@@ -6,9 +6,9 @@ const Navbar = () => {
   return (
     <>
     <div id="navbar" className="relative flex w-full text-xl items-center justify-center">
-      {/* <div id="startcontent" className="">
+      <div id="startcontent" className="">
         <img src={logo} alt="Logo" className="" />
-      </div> */}
+      </div>
       <div id="midcontent" className="flex items-center">
         <ul className="flex gap-8 text-white">
           <li  id="about-us" className="">About us</li>
