@@ -135,12 +135,38 @@ const Grainient = ({
     const container = containerRef.current;
     if (!container) return;
 
-    const renderer = new Renderer({
-      webgl: 2,
-      alpha: true,
-      antialias: false,
-      dpr: Math.min(window.devicePixelRatio || 1, 2)
-    });
+    let renderer = null;
+    // Try WebGL2 first, fall back to WebGL1 if unavailable. Guard against failures.
+    try {
+      renderer = new Renderer({
+        webgl: 2,
+        alpha: true,
+        antialias: false,
+        dpr: Math.min(window.devicePixelRatio || 1, 2)
+      });
+    } catch (err) {
+      // failed to create WebGL2 context
+      console.warn('Grainient: WebGL2 initialization failed, trying WebGL1', err);
+    }
+
+    if (!renderer || !renderer.gl) {
+      try {
+        renderer = new Renderer({
+          webgl: 1,
+          alpha: true,
+          antialias: false,
+          dpr: Math.min(window.devicePixelRatio || 1, 2)
+        });
+        console.info('Grainient: using WebGL1 fallback');
+      } catch (err) {
+        console.error('Grainient: WebGL initialization failed (both WebGL2 and WebGL1).', err);
+      }
+    }
+
+    if (!renderer || !renderer.gl) {
+      // Nothing we can do — skip creating the GL scene to avoid crashing the app.
+      return () => { /* noop cleanup */ };
+    }
 
     const gl = renderer.gl;
     const canvas = gl.canvas;

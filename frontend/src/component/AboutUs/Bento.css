@@ -1,0 +1,167 @@
+@font-face{
+    font-family: 'Handwritten';
+    src: url('../../assets/handwritten.ttf');
+}
+
+@font-face{
+    font-family: 'Garet';
+    src: url('../../assets/Garet.ttf');
+}
+
+  /* color1 = '#FF9FFC',
+  color2 = '#5227FF',
+  color3 = '#B497CF', */
+
+section{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-container{
+    display: grid;
+    gap: 0.5rem;
+    grid-template-rows: repeat(8,50px);   
+    grid-template-columns: repeat(8, 75px);
+    grid-template-areas: 
+    "box1 box1 box1 box2 box2 box3 box3 box3"
+    "box1 box1 box1 box2 box2 box3 box3 box3"
+    
+    "box4 box4 box5 box5 box5 box5 box6 box6"
+    "box4 box4 box5 box5 box5 box5 box6 box6"
+    "box4 box4 box5 box5 box5 box5 box6 box6"
+    "box4 box4 box5 box5 box5 box5 box6 box6"
+
+    "box7 box7 box7 box7 box8 box8 box8 box8"
+    "box7 box7 box7 box7 box8 box8 box8 box8";
+    width: fit-content;
+}
+
+.boxes{
+    /* border: 1px solid black; */
+    padding: 0.8rem;
+    font-weight: bold;
+    font-size:  1.2rem;
+    background-color: Lightblue;
+    border-radius: 2rem;
+    /* border: 2px solid black; */
+    min-width: 50px;
+    min-height: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.boxes h1{
+    font-family: 'Handwritten', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 0.1rem;
+    font-weight:400;
+}
+
+.boxes p{
+    font-family: 'Garet', sans-serif;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin: 0;
+    letter-spacing: -1px;
+    font-weight: 600;
+}
+
+#box1{
+    background: linear-gradient(#a18cd1, #fbc2eb);
+    color: black;
+    justify-content: center;
+}
+#box1 h1{
+    font-size: 3rem;
+    letter-spacing: -1px;
+    font-weight: 500;
+    font-family: 'Handwritten', sans-serif;
+    flex-shrink: 1;
+
+}
+#box1 p{
+    align-self: flex-end;
+    flex-shrink: 0;
+}
+
+#box2{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(#a18cd1, #fbc2eb);
+    color: black;
+}
+#box2 h1{
+    font-size: 2.5rem;
+    letter-spacing: -2px;
+    font-weight: 600;
+    font-family: 'Helvetica', sans-serif;
+}
+
+#box4{
+    justify-content: space-evenly;
+    background: linear-gradient(#fbc2eb, #a6c1ee);
+    color: black;
+}
+#box4 h1{
+    font-size: 5rem;
+    letter-spacing: -1px;
+    font-weight: 500;
+    font-family: 'Helvetica';
+}
+#box4 p{
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    font-weight: 1000;
+    line-height: 1.2;
+}
+
+#box5{
+    background-image: url('../../assets/mumbai.png');
+    background-size: cover;
+    image-rendering: pixelated;
+    background-position: center;
+}
+
+#box6{
+    background: linear-gradient(#a6c1ee, #fbc2eb);
+    color: black;
+}
+#box6 h1{
+    font-size: 4rem;
+    letter-spacing: -2px;
+    font-weight: 600;
+}
+#box6 p{
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+}   
+
+#box8{
+    background: linear-gradient(#fbc2eb, #a18cd1);
+    color: black;
+}
+#box8 h1{
+    font-size: 2.5rem;
+    font-weight: 500;
+    font-family: 'Handwritten', sans-serif;
+}
+#box8 p{
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    flex-shrink: 0;
+    align-self: flex-end;
+}
+
+#box7,#box3{
+    display: none;
+}
+

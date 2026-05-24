@@ -2,6 +2,10 @@ import React from 'react'
 import './App.css'
 import Navbar from './component/Navbar/Navbar'
 import Herosection from './component/Hero/Herosection'
+import Bento from './component/AboutUs/Bento'
+
+
+
 
 const App = () => {
   return (
@@ -16,6 +20,7 @@ const App = () => {
           </div>
         </div>
       </Herosection>
+      <Bento id="Bento"/>
     </div>
   )
 }
